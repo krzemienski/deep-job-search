@@ -1,0 +1,84 @@
+version: '3.8'
+
+services:
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    env_file:
+      - ./frontend/.env
+      - ./frontend/.env.test
+    environment:
+      - NEXT_PUBLIC_API_URL=http://localhost:8000
+    volumes:
+      - ./frontend:/app
+      - /app/node_modules
+      - /app/.next
+    depends_on:
+      - backend
+    networks:
+      - app-network
+
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
+    env_file:
+      - ./backend/.env
+      - ./backend/.env.test
+    volumes:
+      - ./backend:/app
+      - /app/venv
+    depends_on:
+      - redis
+    networks:
+      - app-network
+
+  celery_worker:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile.celery
+    env_file:
+      - ./backend/.env
+      - ./backend/.env.test
+    environment:
+      - CELERY_BROKER_URL=redis://redis:6379/0
+      - CELERY_RESULT_BACKEND=redis://redis:6379/0
+    volumes:
+      - ./backend:/app
+    depends_on:
+      - redis
+      - backend
+    networks:
+      - app-network
+
+  flower:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile.celery
+    command: celery -A celery_app flower --port=5555
+    ports:
+      - "5555:5555"
+    env_file:
+      - ./backend/.env
+      - ./backend/.env.test
+    depends_on:
+      - redis
+      - celery_worker
+    networks:
+      - app-network
+
+  redis:
+    image: redis:7-alpine
+    ports:
+      - "6379:6379"
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge
