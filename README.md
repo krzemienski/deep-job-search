@@ -156,6 +156,23 @@ pytest test_deep_research.py
 - Backend: Black formatter, isort for imports
 - Frontend: Prettier, ESLint
 
+## 🤖 Built with Windsurf
+
+This entire project was built using Windsurf, the world's first agentic IDE. The `/docs` directory contains all the prompts and specifications used to create this project:
+
+- `deep_job_search_prompt.md`: Initial project specification and requirements
+- `tech_stack_document.md`: Technical stack decisions and architecture
+- `implementation_plan.md`: Step-by-step implementation guide
+- `app_flow_document.md`: User journey and application flow
+- `backend_structure_document.md`: Backend architecture and API design
+- `frontend_guidelines_document.md`: Frontend component structure and styling
+- `file_structure_document.md`: Project organization and file layout
+- `cursorrules_file.md`: IDE-specific configuration
+- `windsurf_file.md`: Windsurf-specific settings and configurations
+
+Watch how this project was built with Windsurf:
+[🎥 Building Deep Job Search with Windsurf](https://youtu.be/FNO8ZIMsyGA)
+
 ### Contributing
 
 1. Fork the repository
