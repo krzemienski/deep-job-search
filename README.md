@@ -2,6 +2,58 @@
 
 An AI-powered job search platform that uses resume parsing and deep research to match tech professionals with relevant job opportunities.
 
+# 🤖 Built with Windsurf - The World's First Agentic IDE
+
+> **Watch the Build Process**: [🎥 Building Deep Job Search with Windsurf](https://youtu.be/FNO8ZIMsyGA)
+
+This entire project was built using Windsurf, demonstrating the power of AI-assisted development. Every aspect of the application - from architecture to implementation - was created through structured prompts and specifications found in the `/docs` directory.
+
+## 📚 Project Documentation and Prompts
+
+Each file in the `/docs` directory serves a specific purpose in guiding Windsurf to build the application:
+
+### Core Project Definition
+| File | Purpose | Description |
+|------|---------|-------------|
+| `deep_job_search_prompt.md` | 📋 Initial Project Specification | The foundational prompt that defines the project's goals, features, and requirements. This document guided Windsurf in understanding what we wanted to build: a resume-parsing job search platform with AI-powered recommendations. |
+| `tech_stack_document.md` | 🏗️ Technology Decisions | Specifies our technical choices (Next.js, FastAPI, Celery, etc.) and explains why each technology was chosen. This helped Windsurf understand our technical constraints and preferences. |
+| `implementation_plan.md` | 📅 Development Roadmap | A step-by-step guide for building the application, breaking down complex features into manageable tasks. This document helped Windsurf prioritize work and maintain a clear development path. |
+
+### Architecture and Design
+| File | Purpose | Description |
+|------|---------|-------------|
+| `app_flow_document.md` | 🔄 User Journey Design | Maps out the complete user experience, from uploading a resume to receiving job recommendations. This guided Windsurf in creating intuitive user flows and interfaces. |
+| `backend_structure_document.md` | ⚙️ Backend Architecture | Details the API design, database schema, and service architecture. This document helped Windsurf implement a clean, maintainable backend with proper separation of concerns. |
+| `frontend_guidelines_document.md` | 🎨 Frontend Architecture | Defines component structure, styling guidelines, and state management approaches. This ensured Windsurf created a consistent, modern UI with reusable components. |
+
+### Project Organization
+| File | Purpose | Description |
+|------|---------|-------------|
+| `file_structure_document.md` | 📁 Project Layout | Defines the organization of code, assets, and configuration files. This helped Windsurf maintain a clean, scalable project structure. |
+| `cursorrules_file.md` | ⌨️ IDE Configuration | Contains IDE-specific settings for code formatting, linting, and editor behavior. This ensured consistent code style across the project. |
+| `windsurf_file.md` | 🛠️ Windsurf Settings | Configures Windsurf's behavior, including AI model preferences and development workflow settings. This optimized Windsurf's assistance for our specific needs. |
+
+### How These Prompts Work Together
+
+1. **Project Definition Phase**
+   - `deep_job_search_prompt.md` sets the overall vision
+   - `tech_stack_document.md` defines our technical approach
+   - `implementation_plan.md` creates our roadmap
+
+2. **Architecture Phase**
+   - `backend_structure_document.md` designs our server architecture
+   - `frontend_guidelines_document.md` establishes our UI/UX patterns
+   - `app_flow_document.md` connects frontend and backend through user journeys
+
+3. **Implementation Phase**
+   - `file_structure_document.md` organizes our codebase
+   - `cursorrules_file.md` maintains code quality
+   - `windsurf_file.md` optimizes the development experience
+
+This structured approach to AI-assisted development demonstrates how Windsurf can transform high-level requirements into a fully functional application through well-defined prompts and specifications.
+
+---
+
 ## 🌟 Features
 
 - **Resume Upload & Parsing**: Support for PDF and image formats with OCR capabilities
@@ -156,35 +208,10 @@ pytest test_deep_research.py
 - Backend: Black formatter, isort for imports
 - Frontend: Prettier, ESLint
 
-## 🤖 Built with Windsurf
+## 🤝 Support
 
-This entire project was built using Windsurf, the world's first agentic IDE. The `/docs` directory contains all the prompts and specifications used to create this project:
-
-- `deep_job_search_prompt.md`: Initial project specification and requirements
-- `tech_stack_document.md`: Technical stack decisions and architecture
-- `implementation_plan.md`: Step-by-step implementation guide
-- `app_flow_document.md`: User journey and application flow
-- `backend_structure_document.md`: Backend architecture and API design
-- `frontend_guidelines_document.md`: Frontend component structure and styling
-- `file_structure_document.md`: Project organization and file layout
-- `cursorrules_file.md`: IDE-specific configuration
-- `windsurf_file.md`: Windsurf-specific settings and configurations
-
-Watch how this project was built with Windsurf:
-[🎥 Building Deep Job Search with Windsurf](https://youtu.be/FNO8ZIMsyGA)
-
-### Contributing
-
-1. Fork the repository
-2. Create a feature branch
-3. Commit your changes
-4. Push to the branch
-5. Create a Pull Request
+For support, please open an issue in the GitHub repository.
 
 ## 📄 License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## 🤝 Support
-
-For support, please open an issue in the GitHub repository.
